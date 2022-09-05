@@ -212,7 +212,7 @@ def vtk_to_numpy(vtk_array):
       The VTK data array to be converted.
 
     """
-    typ = vtk_array.GetDataType()
+    typ = vtk_array.GetDataObjectType()
     assert typ in get_vtk_to_numpy_typemap().keys(), \
            "Unsupported array type %s"%typ
     assert typ != vtkConstants.VTK_BIT, 'Bit arrays are not supported.'
